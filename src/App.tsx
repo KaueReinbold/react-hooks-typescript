@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import UserCard from './Components/UserCard';
+import ListOfRepositories from './Components/ListOfRepositories';
+import UserProvider from './Contexts/User';
+import HelloWorld from './Components/HelloWorld';
+import SayMyName from './Components/SayMyName';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserProvider>
+      <UserCard />
+
+      <ListOfRepositories />
+
+      <SayMyName />
+
+      <HelloWorld />
+    </UserProvider>
   );
-}
+};
 
 export default App;
